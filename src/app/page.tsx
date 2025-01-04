@@ -23,10 +23,23 @@ export default function HomePage() {
       <div className="d-flex flex-column min-vh-100">
           <section id="masterNoticeBar">
               <div id="banner-blockscan-wrapped" className="position-relative text-center py-3 overflow-hidden" style={{ background: 'linear-gradient(to right, #222 30%, #263D6C, #222 70%)' }}>
-                  <img className="position-absolute start-0 end-0 opacity-10" style={{ top: '-0.2rem' }} src="/assets/svg/patterns/waves-parametric.svg" alt="" />
+              <Image
+  className="position-absolute start-0 end-0 opacity-10"
+  style={{ top: '-0.2rem' }}
+  src="/assets/svg/patterns/waves-parametric.svg"
+  alt=""
+  width={500} // Spécifiez la largeur réelle
+  height={300} // Spécifiez la hauteur réelle
+/>
                   <div className="container-xxl col-xl-10 col-xxl-8 position-relative">
                       <div className="d-flex align-items-center justify-content-center gap-1">
-                          <img width="16" src="/assets/svg/logos/blockscan-light-link.svg" alt="blockscan" />
+                      <Image
+  width="16"
+  height="16" // Ajoutez la hauteur appropriée
+  src="/assets/svg/logos/blockscan-light-link.svg"
+  alt="blockscan"
+/>
+
                           <div className="text-white fw-medium mb-0">
                               Check your 2024 Onchain highlights with 
                               <a href="https://blockscan.com/wrapped" className="link-primary" target="_blank" style={{ color: '#8DD0EA' }}>Blockscan Wrapped <i className="far fa-arrow-up-right"></i></a>
@@ -200,16 +213,18 @@ export default function HomePage() {
         target="_parent"
         aria-label="Etherscan"
       >
-        <img
+        <Image
+          height={34.14}
           width={150}
           data-img-theme="light"
-          src="assets/svg/logos/logo-etherscanc1b6.svg?v=0.0.5"
+          src="/assets/svg/logos/logo-etherscanc1b6.svg"
           alt="Etherscan Logo"
         />
-        <img
+        <Image
+          height={34.14}
           width={150}
           data-img-theme="darkmode"
-          src="assets/svg/logos/logo-etherscan-lightc1b6.svg?v=0.0.5"
+          src="/assets/svg/logos/logo-etherscan-lightc1b6.svg"
           alt="Etherscan Logo"
         />
       </a>
@@ -624,29 +639,32 @@ export default function HomePage() {
                     <div>
                       <h6>Tools &amp; Services</h6>
                       <p>
-                        Discover more of Etherscan's tools and services in one
+                        Discover more of Etherscans tools and services in one
                         place.
                       </p>
                     </div>
                     <div className="mt-auto">
                       <p className="text-muted mb-2">Sponsored</p>
                       <a target="_blank" href="https://chat.blockscan.com/">
-                        <img
+                        <Image
+                          height={140}
                           width={140}
                           data-img-theme="light"
-                          src="images/svg/blockscan-logo-lightc1b6.svg?v=0.0.5"
+                          src="/images/svg/blockscan-logo-lightc1b6.svg?v=0.0.5"
                           alt=""
                         />
-                        <img
+                        <Image
+                          height={140}
                           width={140}
                           data-img-theme="dim"
-                          src="images/svg/blockscan-logo-darkc1b6.svg?v=0.0.5"
+                          src="/images/svg/blockscan-logo-darkc1b6.svg?v=0.0.5"
                           alt=""
                         />
-                        <img
+                        <Image
+                          height={140}
                           width={140}
                           data-img-theme="dark"
-                          src="images/svg/blockscan-logo-darkc1b6.svg?v=0.0.5"
+                          src="/images/svg/blockscan-logo-darkc1b6.svg?v=0.0.5"
                           alt=""
                         />
                       </a>
@@ -941,12 +959,12 @@ export default function HomePage() {
               style={{ minWidth: "14rem" }}
             >
               <li>
-                <button
-                  type="button"
-                  className="dropdown-item theme-btn active"
-                  data-bs-theme-value="light"
-                  onclick="setThemeMode('light');"
-                >
+              <button
+    type="button"
+    className="dropdown-item theme-btn active"
+    data-bs-theme-value="light"
+    onClick={() => setThemeMode('light')}
+  >
                   <i
                     className="far fa-sun-bright fa-fw dropdown-item-icon theme-icon me-1"
                     data-href="#fa-sun-bright"
@@ -955,12 +973,12 @@ export default function HomePage() {
                 </button>
               </li>
               <li>
-                <button
-                  type="button"
-                  className="dropdown-item theme-btn"
-                  data-bs-theme-value="dim"
-                  onclick="setThemeMode('dim');"
-                >
+              <button
+    type="button"
+    className="dropdown-item theme-btn"
+    data-bs-theme-value="dim"
+    onClick={() => setThemeMode('dim')}
+  >
                   <i
                     className="far fa-moon-stars fa-fw dropdown-item-icon theme-icon me-1"
                     data-href="#fa-moon-stars"
@@ -969,12 +987,12 @@ export default function HomePage() {
                 </button>
               </li>
               <li>
-                <button
-                  type="button"
-                  className="dropdown-item theme-btn"
-                  data-bs-theme-value="dark"
-                  onclick="setThemeMode('dark');"
-                >
+              <button
+    type="button"
+    className="dropdown-item theme-btn"
+    data-bs-theme-value="dark"
+    onClick={() => setThemeMode('dark')}
+  >
                   <i
                     className="far fa-moon-stars fa-fw dropdown-item-icon theme-icon me-1"
                     data-href="#fa-moon"
@@ -1075,7 +1093,7 @@ export default function HomePage() {
                   className="form-select fs-base border-0 filterby"
                   aria-label="Default select example"
                 >
-                  <option selected="" value={0}>
+                  <option value={0}>
                     All Filters
                   </option>
                   <option value={1}>Addresses</option>
@@ -1101,7 +1119,7 @@ export default function HomePage() {
                   placeholder="Search by Address / Txn Hash / Block / Token / Domain Name"
                   aria-describedby="button-header-search"
                   name="q"
-                  onkeyup="handleSearchText(this);"
+                 
                   maxLength={68}
                 />
                 <a
@@ -1127,8 +1145,8 @@ export default function HomePage() {
           <p
             className="text-white text-opacity-75 mb-0 noindex-section"
             style={{ minHeight: 22 }}
-            meta=""
-            name="robots"
+          
+            
             content="noindex, nofollow"
           >
             {/* Revive Adserver Anti Adblocker Asynchronous JS Tag - Generated with Revive Adserver v5.5.2 */}
@@ -1142,8 +1160,8 @@ export default function HomePage() {
         {/* Banners */}
         <div
           className="col-auto mx-auto noindex-section"
-          meta=""
-          name="robots"
+       
+       
           content="noindex, nofollow"
         >
           <div className="d-none d-lg-flex justify-content-center mt-n4">
@@ -1159,11 +1177,11 @@ export default function HomePage() {
               >
                 Ad
               </span>
-              <img
+              <Image
                 className="img-fluid rounded"
                 width={321}
                 height={101}
-                src="images/gen/moonpay_etherscan_dec24_321x101.png"
+                src="/images/gen/moonpay_etherscan_dec24_321x101.png"
                 alt="Ads"
               />
             </a>
@@ -1179,11 +1197,11 @@ export default function HomePage() {
               >
                 Ad
               </span>
-              <img
+              <Image
                 className="img-fluid rounded"
                 width={730}
                 height={90}
-                src="images/gen/moonpay_etherscan_dec24_730x90.png"
+                src="/images/gen/moonpay_etherscan_dec24_730x90.png"
                 alt="Ads"
               />
             </a>
@@ -1199,11 +1217,11 @@ export default function HomePage() {
               >
                 Ad
               </span>
-              <img
+              <Image
                 className="img-fluid rounded"
                 width={321}
                 height={101}
-                src="images/gen/moonpay_etherscan_dec24_321x101.png"
+                src="/images/gen/moonpay_etherscan_dec24_321x101.png"
                 alt="Ads"
               />
             </a>
@@ -1229,18 +1247,20 @@ export default function HomePage() {
           {/* Eth Price */}
           <div className="d-flex">
             <div className="text-center me-3" style={{ width: "1.5rem" }}>
-              <img
+              <Image
                 className="img-fluid mx-auto"
+                height={18}
                 width={18}
                 data-img-theme="light"
-                src="images/svg/brands/ethereum-original.svg"
+                src="/images/svg/brands/ethereum-original.svg"
                 alt="Ethereum Logo"
               />
-              <img
+              <Image
                 className="img-fluid mx-auto"
+                height={18}
                 width={18}
                 data-img-theme="darkmode"
-                src="images/svg/brands/ethereum-original-light.svg"
+                src="/images/svg/brands/ethereum-original-light.svg"
                 alt="Ethereum Logo"
               />
             </div>
@@ -1335,7 +1355,7 @@ export default function HomePage() {
                 data-bs-toggle="tooltip"
                 data-bs-placement="bottom"
                 title="This block is finalized and cannot be reverted without slashing at least 1/3 of all validators"
-                stake=""
+                
               >
                 21545632
               </span>
@@ -1369,8 +1389,8 @@ export default function HomePage() {
     {/* Banners */}
     <div
       className="d-flex d-lg-none justify-content-center mb-4 noindex-section"
-      meta=""
-      name="robots"
+      
+      
       content="noindex, nofollow"
     >
       <a
@@ -1385,11 +1405,11 @@ export default function HomePage() {
         >
           Ad
         </span>
-        <img
+        <Image
           className="img-fluid rounded"
           width={321}
           height={101}
-          src="images/gen/moonpay_etherscan_dec24_321x101.png"
+          src="/images/gen/moonpay_etherscan_dec24_321x101.png"
           alt="Ads"
         />
       </a>
@@ -1405,11 +1425,11 @@ export default function HomePage() {
         >
           Ad
         </span>
-        <img
+        <Image
           className="img-fluid rounded"
           width={730}
           height={90}
-          src="images/gen/moonpay_etherscan_dec24_730x90.png"
+          src="/images/gen/moonpay_etherscan_dec24_730x90.png"
           alt="Ads"
         />
       </a>
@@ -1425,11 +1445,11 @@ export default function HomePage() {
         >
           Ad
         </span>
-        <img
+        <Image
           className="img-fluid rounded"
           width={321}
           height={101}
-          src="images/gen/moonpay_etherscan_dec24_321x101.png"
+          src="/images/gen/moonpay_etherscan_dec24_321x101.png"
           alt="Ads"
         />
       </a>
@@ -2586,7 +2606,7 @@ export default function HomePage() {
             type="button"
             id="btnSaveAdvancedFilterCard"
             className="btn btn-primary"
-            disabled=""
+           
           >
             Save changes
           </button>
@@ -2660,7 +2680,7 @@ export default function HomePage() {
                 id="popupDontShowAgain"
               />
               <label className="form-check-label" htmlFor="popupDontShowAgain">
-                Don't show this for 30 days
+                Dont show this for 30 days
               </label>
             </div>
           </div>
@@ -2709,7 +2729,7 @@ export default function HomePage() {
                 type="text"
                 className="form-control py-2"
                 id="saveTxnNoteHash"
-                disabled=""
+               
               />
             </div>
             <div className="mb-4">
@@ -2758,15 +2778,15 @@ export default function HomePage() {
             Cancel
           </button>
           <button
-            type="button"
-            className="btn btn-primary"
-            onclick="quickSubmitTxPrivateNote();"
-          >
+    type="button"
+    className="btn btn-primary"
+   
+  >
             Save changes
           </button>
           <span
             id="modalElement"
-            name="modalElement"
+            
             style={{ display: "none" }}
           />
         </div>
@@ -2843,18 +2863,21 @@ export default function HomePage() {
       <div className="row justify-content-md-between py-8 py-lg-10">
         <div className="col-lg-4 pe-xl-16 mb-4 mb-lg-0">
           <div className="d-flex align-items-center mb-3">
-            <img
+            <Image
               className="me-2"
+              height={20}
               width={20}
               data-img-theme="light"
-              src="images/svg/brands/ethereum-original.svg"
+              src="/images/svg/brands/ethereum-original.svg"
               alt="Ethereum Logo"
             />
-            <img
+            <Image
               className="me-2"
               width={20}
+              height={20}
+
               data-img-theme="darkmode"
-              src="images/svg/brands/ethereum-original-light.svg"
+              src="/images/svg/brands/ethereum-original-light.svg"
               alt="Ethereum Logo"
             />
             <span className="fs-5">Powered by Ethereum</span>
@@ -2864,18 +2887,20 @@ export default function HomePage() {
             decentralized smart contracts platform.
           </p>
           <div className="d-none d-lg-block mt-n4 mb-n6">
-            <img
+            <Image
               className="opacity-50"
+              height={168.3}
               width={280}
               data-img-theme="light"
-              src="images/map.png"
+              src="/images/map.png"
               alt="Background Map Image"
             />
-            <img
+            <Image
               className="opacity-50"
               width={280}
+              height={280}
               data-img-theme="darkmode"
-              src="images/map-light.png"
+              src="/images/map-light.png"
               alt="Background Map Image"
             />
           </div>
@@ -2903,7 +2928,7 @@ export default function HomePage() {
               <a className="link-dark" href="careers.html">
                 <span className="me-1">Careers</span>{" "}
                 <span className="bg-primary text-white small fw-medium text-nowrap rounded-pill p-1 px-2">
-                  We're Hiring!
+                  We re Hiring!
                 </span>
               </a>
             </li>
@@ -3025,7 +3050,7 @@ export default function HomePage() {
                 className="me-1"
                 href="address/0x71c7656ec7ab88b098defb751b7401b5f6d8976f.html"
               >
-                <span id="spanDonateAddress" runat="server">
+                <span id="spanDonateAddress">
                   0x71c765...d8976f
                 </span>
               </a>{" "}

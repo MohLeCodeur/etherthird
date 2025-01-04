@@ -10,7 +10,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Head>
                 <title>Ethereum (ETH) Blockchain Explorer</title>
                 <meta name="description" content="Etherscan allows you to explore Ethereum blockchain." />
-                <link rel="icon" href="/images/favicon3.ico" />
+                
             </Head>
             <body>
             <ThirdwebProvider>
