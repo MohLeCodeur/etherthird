@@ -2899,7 +2899,7 @@ export default function HomePage() {
             <Image
               className="opacity-50"
               width={280}
-              height={280}
+              height={168}
               data-img-theme="darkmode"
               src="/images/map-light.png"
               alt="Background Map Image"
