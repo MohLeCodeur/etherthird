@@ -650,21 +650,21 @@ export default function HomePage() {
                           height={140}
                           width={140}
                           data-img-theme="light"
-                          src="/images/svg/blockscan-logo-lightc1b6.svg?v=0.0.5"
+                          src="/images/svg/blockscan-logo-lightc1b6.svg"
                           alt=""
                         />
                         <Image
                           height={140}
                           width={140}
                           data-img-theme="dim"
-                          src="/images/svg/blockscan-logo-darkc1b6.svg?v=0.0.5"
+                          src="/images/svg/blockscan-logo-darkc1b6.svg"
                           alt=""
                         />
                         <Image
                           height={140}
                           width={140}
                           data-img-theme="dark"
-                          src="/images/svg/blockscan-logo-darkc1b6.svg?v=0.0.5"
+                          src="/images/svg/blockscan-logo-darkc1b6.svg"
                           alt=""
                         />
                       </a>
@@ -1230,10 +1230,7 @@ export default function HomePage() {
         {/* End Banners */}
       </div>
     </div>
-    <div style={{ marginLeft: 110 }}>
-      {/* Bouton Connect de Thirdweb */}
-      <ConnectButton client={client} wallets={wallets} />
-    </div>
+  
   </section>
   
   <section className="container-xxl pb-20">
@@ -2851,6 +2848,10 @@ export default function HomePage() {
           >
             <i className="fab fa-reddit-alien" />
           </a>
+          <div style={{ marginLeft: 10 }}>
+      {/* Bouton Connect de Thirdweb */}
+      <ConnectButton client={client} wallets={wallets} />
+    </div>
         </div>
         {/* End Social Links */}
         <a className="link-dark" href="#">
