@@ -220,13 +220,7 @@ export default function HomePage() {
           src="/assets/svg/logos/logo-etherscanc1b6.svg"
           alt="Etherscan Logo"
         />
-        <Image
-          height={34.14}
-          width={150}
-          data-img-theme="darkmode"
-          src="/assets/svg/logos/logo-etherscan-lightc1b6.svg"
-          alt="Etherscan Logo"
-        />
+      
       </a>
       <div className="d-flex align-items-center gap-4">
         <a className="link-dark d-block d-lg-none" href="login.html">
@@ -1252,14 +1246,7 @@ export default function HomePage() {
                 src="/images/svg/brands/ethereum-original.svg"
                 alt="Ethereum Logo"
               />
-              <Image
-                className="img-fluid mx-auto"
-                height={18}
-                width={18}
-                data-img-theme="darkmode"
-                src="/images/svg/brands/ethereum-original-light.svg"
-                alt="Ethereum Logo"
-              />
+              
             </div>
           
 
@@ -2872,15 +2859,7 @@ export default function HomePage() {
               src="/images/svg/brands/ethereum-original.svg"
               alt="Ethereum Logo"
             />
-            <Image
-              className="me-2"
-              width={20}
-              height={20}
-
-              data-img-theme="darkmode"
-              src="/images/svg/brands/ethereum-original-light.svg"
-              alt="Ethereum Logo"
-            />
+           
             <span className="fs-5">Powered by Ethereum</span>
           </div>
           <p className="fs-sm">
