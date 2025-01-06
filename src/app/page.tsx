@@ -2896,14 +2896,7 @@ export default function HomePage() {
               src="/images/map.png"
               alt="Background Map Image"
             />
-            <Image
-              className="opacity-50"
-              width={280}
-              height={168}
-              data-img-theme="darkmode"
-              src="/images/map-light.png"
-              alt="Background Map Image"
-            />
+          
           </div>
         </div>
         <div className="col-6 col-md-4 col-lg mb-10 mb-md-0">
