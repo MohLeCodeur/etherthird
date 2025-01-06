@@ -1136,19 +1136,45 @@ export default function HomePage() {
             </div>
           </form>
           {/* Text Ads */}
-          <p
-            className="text-white text-opacity-75 mb-0 noindex-section"
-            style={{ minHeight: 22 }}
-          
-            
-            content="noindex, nofollow"
-          >
-            {/* Revive Adserver Anti Adblocker Asynchronous JS Tag - Generated with Revive Adserver v5.5.2 */}
-            <ins
-              dgpz-t8xt5pt6kr-em9uzwlk={6}
-              dgpz-t8xt5pt6kr-id="033e0828aecd8a15c31181716c4b1552"
-            />
-          </p>
+          <>
+  <p
+    className="text-white text-opacity-75 mb-0 noindex-section"
+    style={{ minHeight: 22 }}
+    content="noindex, nofollow"
+  >
+    {/* Revive Adserver Anti Adblocker Asynchronous JS Tag - Generated with Revive Adserver v5.5.2 */}
+    <ins
+      dgpz-t8xt5pt6kr-em9uzwlk={6}
+      dgpz-t8xt5pt6kr-id="033e0828aecd8a15c31181716c4b1552"
+      dgpz-t8xt5pt6kr-ywpz={0}
+      id="t8xt5pt6kr-undefined-0"
+      dgpz-t8xt5pt6kr-loaded={1}
+      style={{ textDecoration: "none" }}
+    >
+      <b>Sponsored:</b> Traders Invest $100,000+ Into <b>WEPE</b>, Get in EARLY
+      and get Access To Private Trading
+      <br /> Community!{" "}
+      <a
+        href="https://eas.etherscan.com/d3d3/ZGVsaXZlcnk/Y3Cs=.php?YmFubmVyaWQ=6991&em9uZWlk=6&sig=8183ef62ca8d3cfa16fd05a10552cd476603a31ebfc769f0f5892996003a345d&oadest=https%3A%2F%2Fa1.adform.net%2FC%2F%3Fbn%3D78016207"
+        target="_blank"
+        rel="nofollow"
+        title="Links to an External Advertiser site"
+      >
+        {" "}
+        <b>BUY $WEPE</b>
+      </a>
+    </ins>
+  </p>
+  <div
+    id="beacon_07a5fe6e89"
+    style={{ position: "absolute", left: 0, top: 0, visibility: "hidden" }}
+   
+  >
+    
+  </div>
+  <p />
+</>
+
           {/* End Text Ads */}
         </div>
         {/* Banners */}
