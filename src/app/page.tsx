@@ -1364,8 +1364,15 @@ export default function HomePage() {
           <div
             id="container-1"
             className="w-100 pt-2"
-            style={{ height: 105 }}
+          
           />
+            <Image
+          className="img-fluid rounded"
+          width={353}
+          height={97}
+          src="/scan.png"
+          alt="Ads"
+        />
         </div>
       </div>
     </div>

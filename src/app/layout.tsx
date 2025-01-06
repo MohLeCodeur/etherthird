@@ -12,9 +12,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <body>
         {/* Inclusion du script jQuery avant l'interactivité */}
-        <Script
+        {/* <Script
   src="/assets/highcharts/v/highcharts4769.js"
   strategy="afterInteractive"
+/> */}
+        <Script
+  src="/assets/highcharts/v/highcharts4769.js"
+
 />
 
       

@@ -19,6 +19,7 @@
     "thirdweb": "^5"
   },
   "devDependencies": {
+    "@types/highcharts": "^5.0.44",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
