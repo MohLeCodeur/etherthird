@@ -101,3 +101,26 @@
     transform: scale(0.95);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
+.css-1cv2836 {
+    visibility: hidden;
+    position: relative;
+}
+
+.css-1cv2836::after {
+    content: "Etherscan";
+    visibility: visible;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.css-z2ojh2 img {
+    visibility: hidden !important; /* Force le masquage */
+    position: relative !important;
+}
+
+.css-z2ojh2 {
+    background-image: url('/favicon.ico') !important; /* Si favicon.ico est à la racine */
+    background-size: contain !important;
+    background-repeat: no-repeat !important;
+}
+
