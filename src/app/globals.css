@@ -127,3 +127,21 @@
 .css-lmaoyj {
     display: none !important;
 }
+.css-1yl0h0q {
+    visibility: hidden !important; /* Cache le texte original */
+    position: relative; /* Permet le positionnement absolu du texte de remplacement */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.css-1yl0h0q::after {
+    content: "Scan the QR code"; /* Texte de remplacement */
+    visibility: visible;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); /* Centre parfaitement le texte */
+    text-align: center;
+    width: 100%; /* Permet au texte d'être bien centré */
+}
