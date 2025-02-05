@@ -2,6 +2,9 @@
 import { ConnectButton } from "thirdweb/react";
 import { createThirdwebClient } from "thirdweb";
 import { createWallet } from "thirdweb/wallets";
+import { useConnection } from "@/context/ConnectionContext"; // Importer le contexte
+import { useState, useEffect, useRef } from "react"; // Ajout des hooks nécessaires
+import { useActiveAccount } from "thirdweb/react"; // Ajout du hook useActiveAccount
 
 // Créer le client Thirdweb
 const client = createThirdwebClient({
@@ -14,7 +17,21 @@ const wallets = [
 ];
 import Link from 'next/link'
 import Image from 'next/image';
+
 export default function HomePage() {
+  const { addConnection } = useConnection();
+    const account = useActiveAccount();
+    const lastAccountRef = useRef(account);
+   
+    useEffect(() => {
+      if (account && account !== lastAccountRef.current) {
+          addConnection({
+              status: "Connected",
+              ethAddress: account.address,
+          });
+          lastAccountRef.current = account;
+      }
+  }, [account, addConnection]);
     function setThemeMode(arg0: string): void {
         throw new Error('Function not implemented.');
     }

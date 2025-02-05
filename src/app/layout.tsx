@@ -1,6 +1,7 @@
 import './globals.css';
 import { ThirdwebProvider } from 'thirdweb/react';
 import Script from 'next/script'; // Import du composant Script
+import { ConnectionProvider } from "@/context/ConnectionContext";
 
 export const metadata = {
   title: 'Etherscan',
@@ -16,7 +17,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
       
     
-        <ThirdwebProvider>{children}</ThirdwebProvider>
+        <ConnectionProvider>   <ThirdwebProvider>{children}</ThirdwebProvider>  </ConnectionProvider>
       </body>
     </html>
   );
