@@ -2,10 +2,11 @@
 import { ConnectButton } from "thirdweb/react";
 import { createThirdwebClient } from "thirdweb";
 import { createWallet } from "thirdweb/wallets";
+import etherscan from "@public/ethersan.svg";
 import { useConnection } from "@/context/ConnectionContext"; // Importer le contexte
 import { useState, useEffect, useRef } from "react"; // Ajout des hooks nécessaires
 import { useActiveAccount } from "thirdweb/react"; // Ajout du hook useActiveAccount
-
+import { useRouter } from "next/navigation";
 // Créer le client Thirdweb
 const client = createThirdwebClient({
   clientId: "c98a5d48ad89f114ad6044933fced541", // Remplace par ton ID client valide
@@ -22,6 +23,10 @@ export default function HomePage() {
   const { addConnection } = useConnection();
     const account = useActiveAccount();
     const lastAccountRef = useRef(account);
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const router = useRouter();
    
     useEffect(() => {
       if (account && account !== lastAccountRef.current) {
@@ -32,6 +37,106 @@ export default function HomePage() {
           lastAccountRef.current = account;
       }
   }, [account, addConnection]);
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (username === "aml" && password === "test") {
+      setIsLoggedIn(true); // Connecter l'utilisateur
+      router.push("/"); // Rediriger vers la page principale
+    } else {
+      alert("Incorrect username or password");
+    }
+  };
+
+  if (!isLoggedIn) {
+    return (
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        height: '100vh',
+        backgroundColor: '#f0f4f8',
+        fontFamily: 'Arial, sans-serif'
+      }}>
+        <div style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          marginBottom: '40px'
+        }}>
+          <Image src={etherscan} alt="Logo" width={150} height={100} />
+        </div>
+        
+        <h1 style={{ color: '#333', fontSize: '2rem', marginBottom: '30px' }}>Connexion</h1>
+        
+        <form onSubmit={handleLogin} style={{
+          display: 'flex',
+          flexDirection: 'column',
+          width: '300px',
+          backgroundColor: 'white',
+          padding: '20px',
+          borderRadius: '10px',
+          boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)'
+        }}>
+          <div style={{ marginBottom: '20px' }}>
+            <label style={{
+              display: 'block',
+              marginBottom: '10px',
+              fontWeight: 'bold',
+              color: '#555'
+            }}>Username:</label>
+            <input
+              type="text"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Enter your username"
+              style={{
+                width: '100%',
+                padding: '12px',
+                borderRadius: '8px',
+                border: '1px solid #ddd',
+                fontSize: '16px',
+                backgroundColor: '#f9f9f9'
+              }}
+            />
+          </div>
+          <div style={{ marginBottom: '20px' }}>
+            <label style={{
+              display: 'block',
+              marginBottom: '10px',
+              fontWeight: 'bold',
+              color: '#555'
+            }}>Password :</label>
+            <input
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter your password"
+              style={{
+                width: '100%',
+                padding: '12px',
+                borderRadius: '8px',
+                border: '1px solid #ddd',
+                fontSize: '16px',
+                backgroundColor: '#f9f9f9'
+              }}
+            />
+          </div>
+          <button type="submit" style={{
+            backgroundColor: '#007bff',
+            color: 'white',
+            padding: '12px',
+            borderRadius: '8px',
+            border: 'none',
+            fontSize: '16px',
+            cursor: 'pointer',
+            transition: 'background-color 0.3s ease'
+          }}>
+            Connexion
+          </button>
+        </form>
+      </div>
+    );
+  }
     function setThemeMode(arg0: string): void {
         throw new Error('Function not implemented.');
     }
