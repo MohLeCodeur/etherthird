@@ -32,10 +32,18 @@ export const ConnectionProvider = ({ children }: { children: ReactNode }) => {
           ethAddress: data.ethAddress
         });
       });
+  
+      // Trier les entrées par timestamp en ordre décroissant
+      entries.sort((a, b) => {
+        const dateA = new Date(a.timestamp).getTime();
+        const dateB = new Date(b.timestamp).getTime();
+        return dateB - dateA; // Ordre décroissant
+      });
+  
       setConnectionHistory(entries);
       setLoading(false);
     });
-
+  
     return () => unsubscribe();
   }, []);
 
